@@ -11,6 +11,8 @@ public class Main {
 
     static String EMAIL_Pattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 
+    static String NAME_Pattern = ".[a-zA-Z-]{3,}$";
+
     public static void main(String[] args) {
         run();
     }
@@ -46,9 +48,12 @@ public class Main {
         String email=SCANNER.nextLine();
         if (isEmailValid(email)){
             Client client = buildClient(email);
-            System.out.println("New client: " + client.firstName + " " + client.lastName + " (" + client.email + ")");
-            }else {
+            if (client!=null) {
+                System.out.println("New client: " + client.firstName + " " + client.lastName + " (" + client.email + ")");
+            }
+        }else {
             System.out.println("Provide client is invalid.");
+
         }
     }
 
@@ -56,11 +61,27 @@ public class Main {
         Client client = new Client();
         client.email = email;
 
+
         System.out.print("First name: ");
         client.firstName = SCANNER.nextLine();
+        if (isNameValid(client.firstName)){
 
+
+        }else {
+            System.out.println("Provide first name client is invalid.");
+            return null;
+        }
         System.out.print("Last name: ");
         client.lastName = SCANNER.nextLine();
+
+        if (isLastValid(client.lastName)){
+
+        }else {
+            System.out.println("Provide last name client is invalid.");
+            return null;
+        }
+
+
 
         return (client);
     }
@@ -68,6 +89,16 @@ public class Main {
     static boolean isEmailValid(String email) {
         Pattern pattern = Pattern.compile(EMAIL_Pattern);
         Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+    static boolean isNameValid(String firstName) {
+        Pattern pattern = Pattern.compile(NAME_Pattern);
+        Matcher matcher = pattern.matcher(firstName);
+        return matcher.matches();
+    }
+    static boolean isLastValid(String lastName) {
+        Pattern pattern = Pattern.compile(NAME_Pattern);
+        Matcher matcher = pattern.matcher(lastName);
         return matcher.matches();
     }
 }
