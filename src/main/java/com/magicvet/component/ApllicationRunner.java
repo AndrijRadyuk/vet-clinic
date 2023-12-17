@@ -3,14 +3,14 @@ package main.java.com.magicvet.component;
 import main.java.com.magicvet.Main;
 import main.java.com.magicvet.model.Client;
 import main.java.com.magicvet.model.Pet;
-import main.java.com.magicvet.model.PetService;
+import main.java.com.magicvet.service.PetService;
 import main.java.com.magicvet.service.ClientService;
 
 public class ApllicationRunner {
 
-    private ClientService clientService = new ClientService();
+    private final ClientService clientService = new ClientService();
 
-    private PetService petService = new PetService();
+    private final PetService petService = new PetService();
 
     public void run() {
         if (Authenticator.auth()){
@@ -26,6 +26,8 @@ public class ApllicationRunner {
                     pet.setOwnerName(client.getFirstName() + " " + client.getLastName());
 
                     System.out.println("Pet has been added");
+
+                    System.out.println(client);
                 }
             }
 

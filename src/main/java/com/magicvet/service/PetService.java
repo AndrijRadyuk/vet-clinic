@@ -1,10 +1,12 @@
-package main.java.com.magicvet.model;
+package main.java.com.magicvet.service;
 
 import main.java.com.magicvet.Main;
+import main.java.com.magicvet.model.Dog;
+import main.java.com.magicvet.model.Pet;
 
 public class PetService {
 
-    private static String DOG_TYPE = "dog";
+    private static final String DOG_TYPE = "dog";
 
     public Pet registerNewPet(){
 
