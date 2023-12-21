@@ -8,11 +8,15 @@ public class Dog extends Pet {
 
     @Override
     public String toString() {
-        return "dog"
+        return "Pet {"
+                + " type = " + getType()
                 + ", age = " + getAge()
                 + ", name = " + getName()
                 + ", sex = " + getSex()
-                + ", size = " + size;
+                + ", size = " + size
+                + ", ownerName = " + getOwnerName()
+                + " }";
+
     }
 
     @Override

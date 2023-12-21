@@ -10,7 +10,7 @@ public class ClientService {
 
     private static final String EMAIL_Pattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 
-    private static final String NAME_Pattern = ".[a-zA-Z-]{3,}$";
+    private static final String NAME_Pattern = ".[a-zA-Z-]{2,}$";
 
 
     public Client registerNewClient() {
