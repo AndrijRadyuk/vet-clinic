@@ -2,13 +2,27 @@ package main.java.com.magicvet.model;
 
 import java.util.Objects;
 
-public abstract class Pet {
+public class Pet {
 
     private String type;
     private String sex;
     private String age;
     private String name;
     private String ownerName;
+
+    public static final String Name1 = "Alan";
+
+    public static final String Name2 = "Dilan";
+
+    public static final String Name3 = "Billi";
+
+    public Pet() {
+
+    };
+
+    public Pet(String name){
+        this.name = name;
+    }
 
     @Override
     public String toString() {

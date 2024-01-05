@@ -10,7 +10,6 @@ public class Dog extends Pet {
     public static final String L = "L";
     public static final String XL = "XL";
 
-
     private String size;
 
     public Dog() {
