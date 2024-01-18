@@ -5,8 +5,6 @@ import main.java.com.magicvet.model.Cat;
 import main.java.com.magicvet.model.Dog;
 import main.java.com.magicvet.model.Pet;
 
-import java.lang.reflect.Type;
-
 public class PetService {
 
     private static final String DOG_TYPE = "dog";

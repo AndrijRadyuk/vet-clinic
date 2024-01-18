@@ -10,11 +10,20 @@ public class Pet {
     private String name;
     private String ownerName;
 
+    private Health healthState;
+
     public static final String Name1 = "Alan";
 
     public static final String Name2 = "Dilan";
 
     public static final String Name3 = "Billi";
+
+
+
+    public Pet(Health healthState) {
+        this.healthState = healthState;
+    }
+
 
     public Pet() {
 
@@ -87,5 +96,26 @@ public class Pet {
 
     public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
+    }
+
+
+    public Health health() {
+        return healthState;
+    }
+
+    public enum Health {
+        bad(1),
+        good(2),
+        nice(3);
+
+        private final int value;
+
+        Health(int value) {
+            this.value= value;
+        }
+
+        public int getValue() {
+            return value;
+        }
     }
 }
