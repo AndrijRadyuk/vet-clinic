@@ -3,6 +3,7 @@ package main.java.com.magicvet.service;
 import main.java.com.magicvet.Main;
 import main.java.com.magicvet.model.Client;
 
+import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,7 +24,7 @@ public class ClientService {
             client = buildClient(email);
             if (client!=null) {
                 System.out.println("New client: " + client.getFirstName() + " "
-                        + client.getLastName() + " (" + client.getEmail() + ")");
+                        + client.getLastName() + " (" + client.getEmail() + ") " + client.getRegistrationDate());
             }
         }else {
             System.out.println("Provide client is invalid.");
