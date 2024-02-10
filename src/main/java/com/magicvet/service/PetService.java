@@ -43,7 +43,12 @@ public class PetService {
         if (type.equals(DOG_TYPE)) {
             System.out.println("Size (XS / S / M / L / XL): ");
             String size = Main.SCANNER.nextLine();
-            ((Dog) pet).setSize(Dog.Size.fromSting(size));
+            try {
+                ((Dog) pet).setSize(Dog.Size.valueOf(size));
+            } catch (IllegalArgumentException e){
+                System.out.println("Using default value:" + Dog.Size.UNKNOWN);
+                ((Dog) pet).setSize(Dog.Size.UNKNOWN);
+            }
         }
 
         return pet;

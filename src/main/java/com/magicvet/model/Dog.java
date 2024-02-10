@@ -59,7 +59,7 @@ public class Dog extends Pet {
 
         private final int value;
 
-        public static Size fromSting (String value) {
+        /*public static Size fromString(String value) {
             for (Size size : values()){
                 if (size.toString().equals(value)){
                     return size;
@@ -67,7 +67,7 @@ public class Dog extends Pet {
             }
             System.out.println("Unable to parse value '" + value + "'. Using default value:" + UNKNOWN);
             return UNKNOWN;
-        }
+        }*/
 
         Size(int value) {
             this.value=value;
