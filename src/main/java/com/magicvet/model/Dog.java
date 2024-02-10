@@ -22,6 +22,7 @@ public class Dog extends Pet {
                 + ", sex = " + getSex()
                 + ", size = " + size
                 + ", ownerName = " + getOwnerName()
+                + ", registration date = " + getRegistrationDate().format(FORMATTER)
                 + " }";
 
     }
@@ -57,6 +58,16 @@ public class Dog extends Pet {
         UNKNOWN(0);
 
         private final int value;
+
+        public static Size fromSting (String value) {
+            for (Size size : values()){
+                if (size.toString().equals(value)){
+                    return size;
+                }
+            }
+            System.out.println("Unable to parse value '" + value + "'. Using default value:" + UNKNOWN);
+            return UNKNOWN;
+        }
 
         Size(int value) {
             this.value=value;
